@@ -9,19 +9,19 @@ import semantic.symbol.SymbolType;
 
 import java.util.Stack;
 
-/**
- * Created by Alireza on 6/27/2015.
- */
-public class CodeGenerator {
-    private Memory memory = new Memory();
-    private Stack<Address> ss = new Stack<Address>();
-    private Stack<String> symbolStack = new Stack<>();
-    private Stack<String> callStack = new Stack<>();
+class CodeGenerator {
+    private Memory memory;
+    private Stack<Address> ss;
+    private Stack<String> symbolStack;
+    private Stack<String> callStack;
     private SymbolTable symbolTable;
 
-    public CodeGenerator() {
+    CodeGenerator() {
+        memory = new Memory();
+        ss = new Stack<>();
+        symbolStack = new Stack<>();
+        callStack = new Stack<>();
         symbolTable = new SymbolTable(memory);
-        //TODO
     }
 
     public void printMemory() {
